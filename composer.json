@@ -1,0 +1,21 @@
+{
+    "name": "johnata/todo-list",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Johnata Matheus",
+            "email": "johnata@paytour.com.br"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "slim/slim": "^4.0",
+        "slim/psr7": "^1.7",
+        "php-di/php-di": "^7.0",
+        "symfony/http-foundation": "^6.4"
+    }
+}

@@ -1,0 +1,51 @@
+services:
+  app:
+    container_name: todo-list-api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/var/www/html
+    environment:
+      - DB_HOST=mysql
+      - DB_PORT=3306
+      - DB_NAME=todo_list
+      - DB_USER=root
+      - DB_PASSWORD=root
+    depends_on:
+      - mysql 
+    networks:
+      - todo-list-network
+  
+  nginx:
+    image: nginx:alpine
+    container_name: todo-list-nginx
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www/html
+      - ./default.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - app
+    networks:
+      - todo-list-network
+
+  mysql:
+    container_name: todo-list-mysql
+    image: mysql:8.0
+    ports:
+      - "3310:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: todo_list
+      TZ: America/Sao_Paulo
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - todo-list-network
+
+volumes:
+  mysql-data:
+
+networks:
+  todo-list-network:

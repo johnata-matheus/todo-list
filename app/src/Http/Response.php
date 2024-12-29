@@ -4,7 +4,8 @@ namespace App\Http;
 
 use Psr\Http\Message\ResponseInterface;
 
-class Response {
+class Response 
+{
   public static function json(ResponseInterface $response, array $data = [], int $status = 200): ResponseInterface
   {
     $payload = json_encode($data);

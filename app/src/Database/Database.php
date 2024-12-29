@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Config;
+namespace App\Database;
 
 use PDO;
 use PDOException;
@@ -13,9 +13,10 @@ class Database
     $dbname = $_ENV['DB_NAME'];
     $user = $_ENV['DB_USER'];
     $password = $_ENV['DB_PASSWORD'];
+    $port = $_ENV['DB_PORT'];
 
     try {
-      $conn = new PDO("mysql:host=$host;dbname=$dbname", $user, $password);
+      $conn = new PDO("mysql:host=$host;port=$port;dbname=$dbname", $user, $password);
       $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       return $conn;
     } catch(PDOException $e) {

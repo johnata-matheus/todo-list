@@ -1,7 +1,14 @@
 <?php
 
-use App\Http\Controllers\TodoController;
+/**
+ * @var \Slim\App $app
+ */
 
-$app->get('/todos', [TodoController::class, 'getAllTodos']);
-$app->get('/todos/{id}', [TodoController::class, 'getTodoById']);
-$app->post('/todos', [TodoController::class, 'createTodo']);
+use App\Http\Controllers\TaskController;
+
+$app->get('/todos', [TaskController::class, 'getAllTasks']);
+$app->get('/todos/{id}', [TaskController::class, 'getTaskById']);
+$app->post('/todos', [TaskController::class, 'createTask']);
+$app->put('/todos/{id}', [TaskController::class, 'updateTask']);
+$app->delete('/todos/{id}', [TaskController::class, 'deleteTask']);
+

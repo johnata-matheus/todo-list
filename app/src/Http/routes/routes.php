@@ -6,9 +6,8 @@
 
 use App\Http\Controllers\TaskController;
 
-$app->get('/todos', [TaskController::class, 'getAllTasks']);
-$app->get('/todos/{id}', [TaskController::class, 'getTaskById']);
-$app->post('/todos', [TaskController::class, 'createTask']);
-$app->put('/todos/{id}', [TaskController::class, 'updateTask']);
-$app->delete('/todos/{id}', [TaskController::class, 'deleteTask']);
-
+$app->get('/tasks', [TaskController::class, 'getAllTasks']);
+$app->get('/tasks/{id}', [TaskController::class, 'getTaskById']);
+$app->post('/tasks', [TaskController::class, 'createTask']);
+$app->put('/tasks/{id}', [TaskController::class, 'updateTask']);
+$app->delete('/tasks/{id}', [TaskController::class, 'deleteTask']);

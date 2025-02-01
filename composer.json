@@ -2,7 +2,7 @@
     "name": "johnata/todo-list",
     "autoload": {
         "psr-4": {
-            "App\\": "app/src/"
+            "App\\": "app/"
         }
     },
     "authors": [
@@ -19,5 +19,11 @@
         "symfony/http-foundation": "^6.4",
         "vlucas/phpdotenv": "^5.6",
         "robmorgan/phinx": "^0.16.6"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.5",
+        "mockery/mockery": "^1.6",
+        "friendsofphp/php-cs-fixer": "^3.68",
+        "phpstan/phpstan": "^2.1"
     }
 }

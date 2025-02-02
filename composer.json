@@ -11,6 +11,9 @@
             "email": "johnata@paytour.com.br"
         }
     ],
+    "scripts": {
+        "stan": "vendor/bin/phpstan analyse"
+    },
     "minimum-stability": "stable",
     "require": {
         "slim/slim": "^4.0",
